@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chotatsu Finance - Terms and Conditions</title>
+    <!-- Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for a clean look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Slate-900 */
+            color: #e2e8f0; /* Slate-200 */
+        }
+        .container {
+            max-width: 1200px;
+        }
+        .nav-link {
+            @apply px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200;
+        }
+        .nav-link-active {
+            @apply bg-blue-500 text-white shadow-lg;
+        }
+        .nav-link-inactive {
+            @apply hover:bg-gray-700 text-gray-300;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Header Navigation -->
+    <header class="bg-slate-800 shadow-xl py-4 sticky top-0 z-50">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <h1 class="text-2xl font-bold text-white"><a href="chotatsu.org">Chotatsu Finance</a></h1>
+            <nav class="flex flex-wrap justify-center md:justify-end gap-2 md:gap-4">
+                <!-- Calculator Navs -->
+                <a href="chotatsu.org" class="nav-link nav-link-inactive">GST Calculator</a>
+                <a href="loan-calculator.html" class="nav-link nav-link-inactive">Loan Calculator</a>
+                <a href="emi-calculator.html" class="nav-link nav-link-inactive">EMI Calculator</a>
+                <a href="sip-calculator.html" class="nav-link nav-link-inactive">SIP Calculator</a>
+                <a href="vat-calculator.html" class="nav-link nav-link-inactive">VAT Calculator</a>
+                <a href="life-insurance-calculator.html" class="nav-link nav-link-inactive">Life Insurance Calculator</a>
+                <a href="interest-calculator.html" class="nav-link nav-link-inactive">Interest Calculator</a>
+                <a href="home-loan-calculator.html" class="nav-link nav-link-inactive">Home Loan Calculator</a>
+                <a href="car-loan-calculator.html" class="nav-link nav-link-inactive">Car Loan Calculator</a>
+
+                <!-- Informational Navs -->
+                <a href="about-us.html" class="nav-link nav-link-inactive">About Us</a>
+                <a href="contact-us.html" class="nav-link nav-link-inactive">Contact Us</a>
+                <a href="disclaimer.html" class="nav-link nav-link-inactive">Disclaimer</a>
+                <a href="terms.html" class="nav-link nav-link-active">T&C</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area - This content is for terms.html -->
+    <main class="flex-grow container mx-auto p-4 md:p-8">
+        <section id="terms-content" class="bg-slate-800 p-8 rounded-2xl shadow-xl">
+            <h2 class="text-3xl font-bold text-center mb-6 text-white">Terms and Conditions</h2>
+            <div class="text-gray-300 space-y-6 leading-relaxed max-w-3xl mx-auto">
+
+                <p>Welcome to Chotatsu Finance. These Terms and Conditions outline the rules and regulations for the use of our website, located at chotatsu.org.</p>
+                <p>By accessing this website, we assume you accept these terms and conditions. Do not continue to use Chotatsu Finance if you do not agree to all of the terms and conditions stated on this page.</p>
+
+                <h3 class="text-2xl font-semibold mt-8 mb-2 text-white">1. Use of the Site</h3>
+                <p>The calculators and information on this site are for personal, non-commercial use only. You may not use this website for any purpose that is unlawful or prohibited by these terms.</p>
+
+                <h3 class="text-2xl font-semibold mt-8 mb-2 text-white">2. Intellectual Property</h3>
+                <p>The content, features, and functionality are and will remain the exclusive property of Chotatsu Finance and its licensors. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of Chotatsu Finance.</p>
+
+                <h3 class="text-2xl font-semibold mt-8 mb-2 text-white">3. Disclaimer of Warranties</h3>
+                <p>Your use of the site is at your sole risk. The site is provided on an "AS IS" and "AS AVAILABLE" basis. The company makes no warranties of any kind, whether express or implied, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, non-infringement, or course of performance.</p>
+
+                <h3 class="text-2xl font-semibold mt-8 mb-2 text-white">4. Limitation of Liability</h3>
+                <p>In no event shall Chotatsu Finance, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Service.</p>
+
+                <h3 class="text-2xl font-semibold mt-8 mb-2 text-white">5. Governing Law</h3>
+                <p>These terms shall be governed and construed in accordance with the laws of the jurisdiction of Chotatsu Finance, without regard to its conflict of law provisions.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 shadow-inner mt-8 py-4 text-center text-sm text-slate-400">
+        <p>&copy; 2024 Chotatsu Finance. All rights reserved.</p>
+    </footer>
+
+    <!-- No specific JavaScript needed for a static page, but this ensures a clean structure -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Optional: Add any future JS logic here.
+        });
+    </script>
+</body>
+</html>
