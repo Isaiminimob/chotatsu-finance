@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chotatsu Finance - About Us</title>
+    <!-- Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for a clean look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Slate-900 */
+            color: #e2e8f0; /* Slate-200 */
+        }
+        .container {
+            max-width: 1200px;
+        }
+        .nav-link {
+            @apply px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200;
+        }
+        .nav-link-active {
+            @apply bg-blue-500 text-white shadow-lg;
+        }
+        .nav-link-inactive {
+            @apply hover:bg-gray-700 text-gray-300;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Header Navigation -->
+    <header class="bg-slate-800 shadow-xl py-4 sticky top-0 z-50">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <h1 class="text-2xl font-bold text-white"><a href="index.html">Chotatsu Finance</a></h1>
+            <nav class="flex flex-wrap justify-center md:justify-end gap-2 md:gap-4">
+                <!-- Calculator Navs -->
+                <a href="index.html" class="nav-link nav-link-inactive">GST Calculator</a>
+                <a href="loan-calculator.html" class="nav-link nav-link-inactive">Loan Calculator</a>
+                <a href="emi-calculator.html" class="nav-link nav-link-inactive">EMI Calculator</a>
+                <a href="sip-calculator.html" class="nav-link nav-link-inactive">SIP Calculator</a>
+                <a href="vat-calculator.html" class="nav-link nav-link-inactive">VAT Calculator</a>
+                <a href="life-insurance-calculator.html" class="nav-link nav-link-inactive">Life Insurance Calculator</a>
+                <a href="interest-calculator.html" class="nav-link nav-link-inactive">Interest Calculator</a>
+                <a href="home-loan-calculator.html" class="nav-link nav-link-inactive">Home Loan Calculator</a>
+                <a href="car-loan-calculator.html" class="nav-link nav-link-inactive">Car Loan Calculator</a>
+
+                <!-- Informational Navs -->
+                <a href="about-us.html" class="nav-link nav-link-active">About Us</a>
+                <a href="contact-us.html" class="nav-link nav-link-inactive">Contact Us</a>
+                <a href="disclaimer.html" class="nav-link nav-link-inactive">Disclaimer</a>
+                <a href="terms.html" class="nav-link nav-link-inactive">T&C</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area - This content is for about-us.html -->
+    <main class="flex-grow container mx-auto p-4 md:p-8">
+        <section id="about-us-content" class="bg-slate-800 p-8 rounded-2xl shadow-xl">
+            <h2 class="text-3xl font-bold text-center mb-6 text-white">About Chotatsu Finance</h2>
+            <div class="text-gray-300 space-y-4 leading-relaxed max-w-3xl mx-auto">
+                <p>
+                    Welcome to Chotatsu Finance, your go-to destination for simplifying complex financial calculations. In a world where financial decisions can feel overwhelming, our mission is to provide you with a suite of intuitive and powerful tools that empower you to take control of your money.
+                </p>
+                <p>
+                    We believe that everyone deserves access to clear, reliable, and easy-to-use financial information. Our website is designed to be a one-stop-shop for a variety of calculators—from EMI and SIP to tax and loan calculations. Whether you're planning for your first car, a dream home, or your retirement, our tools are here to give you a clear picture of your financial future.
+                </p>
+                <p>
+                    At Chotatsu Finance, we are committed to transparency and accuracy. Each of our calculators is built on industry-standard formulas to ensure you get precise and dependable results. We're constantly working to add more tools and improve our existing ones, driven by our dedication to your financial well-being.
+                </p>
+                <p>
+                    Thank you for trusting us with your financial planning. We are proud to be a part of your journey toward a more secure and prosperous future.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 shadow-inner mt-8 py-4 text-center text-sm text-slate-400">
+        <p>&copy; 2024 Chotatsu Finance. All rights reserved.</p>
+    </footer>
+
+    <!-- No specific JavaScript needed for a static page, but this ensures a clean structure -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Optional: Add any future JS logic here.
+        });
+    </script>
+</body>
+</html>
