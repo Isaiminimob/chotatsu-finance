@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chotatsu Finance - Life Insurance Calculator</title>
+    <!-- Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for a clean look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Slate-900 */
+            color: #e2e8f0; /* Slate-200 */
+        }
+        .container {
+            max-width: 1200px;
+        }
+        .nav-link {
+            @apply px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200;
+        }
+        .nav-link-active {
+            @apply bg-blue-500 text-white shadow-lg;
+        }
+        .nav-link-inactive {
+            @apply hover:bg-gray-700 text-gray-300;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Header Navigation -->
+    <header class="bg-slate-800 shadow-xl py-4 sticky top-0 z-50">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <h1 class="text-2xl font-bold text-white"><a href="index.html">Chotatsu Finance</a></h1>
+            <nav class="flex flex-wrap justify-center md:justify-end gap-2 md:gap-4">
+                <!-- Calculator Navs -->
+                <a href="index.html" class="nav-link nav-link-inactive">GST Calculator</a>
+                <a href="loan-calculator.html" class="nav-link nav-link-inactive">Loan Calculator</a>
+                <a href="emi-calculator.html" class="nav-link nav-link-inactive">EMI Calculator</a>
+                <a href="sip-calculator.html" class="nav-link nav-link-inactive">SIP Calculator</a>
+                <a href="vat-calculator.html" class="nav-link nav-link-inactive">VAT Calculator</a>
+                <a href="life-insurance-calculator.html" class="nav-link nav-link-active">Life Insurance Calculator</a>
+                <a href="interest-calculator.html" class="nav-link nav-link-inactive">Interest Calculator</a>
+                <a href="home-loan-calculator.html" class="nav-link nav-link-inactive">Home Loan Calculator</a>
+                <a href="car-loan-calculator.html" class="nav-link nav-link-inactive">Car Loan Calculator</a>
+
+                <!-- Informational Navs -->
+                <a href="about-us.html" class="nav-link nav-link-inactive">About Us</a>
+                <a href="contact-us.html" class="nav-link nav-link-inactive">Contact Us</a>
+                <a href="disclaimer.html" class="nav-link nav-link-inactive">Disclaimer</a>
+                <a href="terms.html" class="nav-link nav-link-inactive">T&C</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area - This content is for life-insurance-calculator.html -->
+    <main class="flex-grow container mx-auto p-4 md:p-8">
+        <section id="life-insurance-calculator-content" class="bg-slate-800 p-8 rounded-2xl shadow-xl flex flex-col lg:flex-row gap-8">
+            <div class="w-full lg:w-1/2">
+                <h2 class="text-3xl font-bold text-center mb-6 text-white">Life Insurance Calculator</h2>
+                <div class="space-y-6">
+                    <div>
+                        <label for="annual-income" class="block text-sm font-medium mb-1">Annual Income (₹)</label>
+                        <input type="number" id="annual-income" class="w-full p-3 rounded-lg bg-slate-700 border border-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="e.g., 1000000">
+                    </div>
+                    <div>
+                        <label for="existing-debt" class="block text-sm font-medium mb-1">Existing Debt (₹)</label>
+                        <input type="number" id="existing-debt" class="w-full p-3 rounded-lg bg-slate-700 border border-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="e.g., 500000">
+                    </div>
+                    <div>
+                        <label for="years-to-support" class="block text-sm font-medium mb-1">Number of Years to Support Dependents</label>
+                        <input type="number" id="years-to-support" class="w-full p-3 rounded-lg bg-slate-700 border border-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="e.g., 10">
+                    </div>
+                    <div>
+                        <label for="inflation-rate" class="block text-sm font-medium mb-1">Expected Annual Inflation (%)</label>
+                        <input type="number" id="inflation-rate" class="w-full p-3 rounded-lg bg-slate-700 border border-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="e.g., 5">
+                    </div>
+                    <button id="calculate-insurance-btn" class="w-full py-3 px-4 rounded-lg bg-blue-600 hover:bg-blue-700 transition-colors duration-200 text-white font-semibold">Calculate Coverage</button>
+                </div>
+                
+                <div class="mt-8 space-y-4 text-center">
+                    <div class="bg-slate-700 p-4 rounded-lg shadow">
+                        <p class="text-sm font-medium">Recommended Coverage Amount</p>
+                        <p id="coverage-display" class="text-2xl font-bold mt-1 text-green-400">0.00</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full lg:w-1/2 mt-8 lg:mt-0">
+                <h3 class="text-xl font-bold text-white mb-4">How the Life Insurance Calculator Works</h3>
+                <div class="text-gray-300 space-y-4 leading-relaxed">
+                    <p>
+                        Determining the right amount of life insurance coverage can be a complex decision. Our calculator simplifies this process by providing a recommended coverage amount based on your personal financial situation. This helps you ensure that your family and loved ones are financially protected in your absence.
+                    </p>
+                    <p>
+                        The calculator uses a common method to estimate your needs by considering three key factors you provide: your Annual Income, your Existing Debt, and the number of years you want to support your dependents. It also accounts for inflation, as the purchasing power of money decreases over time.
+                    </p>
+                    <p>
+                        The core idea is to calculate a sum that can replace your income for a specified period and also cover any outstanding financial obligations. For example, if you want to support your family for 10 years, the calculator will estimate the total income needed over that period while also factoring in the erosion of value due to inflation. This amount is then added to your existing debt.
+                    </p>
+                    <p>
+                        The simplified formula for this calculation is:
+                        $$ \text{Recommended Coverage} = (\text{Annual Income} \times \text{Years to Support}) \times (1 + \text{Inflation Rate})^{\text{Years to Support}} + \text{Existing Debt} $$
+                        This is a simplified approach, but it gives you a solid starting point for your financial planning.
+                    </p>
+                    <p>
+                        By using this tool, you can get a clear, data-driven number that helps you make an informed decision about your life insurance policy. It's a great first step toward securing your family's future.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 shadow-inner mt-8 py-4 text-center text-sm text-slate-400">
+        <p>&copy; 2024 Chotatsu Finance. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Life Insurance Calculator logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const annualIncomeInput = document.getElementById('annual-income');
+            const existingDebtInput = document.getElementById('existing-debt');
+            const yearsToSupportInput = document.getElementById('years-to-support');
+            const inflationRateInput = document.getElementById('inflation-rate');
+            const calculateBtn = document.getElementById('calculate-insurance-btn');
+
+            const coverageDisplay = document.getElementById('coverage-display');
+
+            const calculateInsurance = () => {
+                const annualIncome = parseFloat(annualIncomeInput.value);
+                const existingDebt = parseFloat(existingDebtInput.value);
+                const years = parseFloat(yearsToSupportInput.value);
+                const inflationRate = parseFloat(inflationRateInput.value) / 100;
+
+                if (isNaN(annualIncome) || isNaN(existingDebt) || isNaN(years) || isNaN(inflationRate) || annualIncome < 0 || existingDebt < 0 || years <= 0 || inflationRate < 0) {
+                    showModal("Please enter valid non-negative numbers for all fields. The number of years to support must be greater than zero.");
+                    return;
+                }
+
+                // Calculate the future value of the income stream with inflation
+                let futureIncomeValue = 0;
+                for (let i = 1; i <= years; i++) {
+                    futureIncomeValue += annualIncome * Math.pow(1 + inflationRate, i);
+                }
+
+                // A simplified alternative to the loop: (Annual Income * Years) + Existing Debt
+                // The loop provides a more accurate, inflation-adjusted value.
+                
+                const recommendedCoverage = futureIncomeValue + existingDebt;
+
+                coverageDisplay.textContent = recommendedCoverage.toFixed(2);
+            };
+
+            calculateBtn.addEventListener('click', calculateInsurance);
+
+            // Custom Modal Box Logic
+            function showModal(message) {
+                let modal = document.getElementById('alert-modal');
+                if (!modal) {
+                    modal = document.createElement('div');
+                    modal.id = 'alert-modal';
+                    modal.className = 'fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center z-50';
+                    modal.innerHTML = `
+                        <div class="bg-slate-800 p-6 rounded-lg shadow-xl max-w-sm w-full mx-4">
+                            <p class="text-white text-center text-lg mb-4" id="modal-message"></p>
+                            <button id="modal-close-btn" class="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg">OK</button>
+                        </div>
+                    `;
+                    document.body.appendChild(modal);
+                    document.getElementById('modal-close-btn').addEventListener('click', () => modal.style.display = 'none');
+                }
+                document.getElementById('modal-message').textContent = message;
+                modal.style.display = 'flex';
+            }
+        });
+    </script>
+</body>
+</html>
